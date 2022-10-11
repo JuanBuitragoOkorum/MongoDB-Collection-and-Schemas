@@ -75,18 +75,19 @@ table {
   align-items: center;
 }
 
-.head{
+.head {
   display: flex;
   background-color: white;
   flex-direction: column;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   border-radius: 6px;
-  
+
 }
-.head-2{
+
+.head-2 {
   width: 800px;
   height: auto;
   display: flex;
@@ -94,7 +95,7 @@ table {
   justify-content: space-between;
 }
 
-.button-wallet{
+.button-wallet {
   height: 30px;
   width: 130px;
   margin-left: 20px;
@@ -103,33 +104,33 @@ table {
   color: white
 }
 
-.walletId{
+.walletId {
   width: 400px;
 }
 
-.remove{
-margin-left: 80px;
+.remove {
+  margin-left: 80px;
 
 }
 
-.modal{
+.modal {
   position: fixed;
   z-index: 999;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(0,0,0,0.75); 
+  background-color: rgba(0, 0, 0, 0.75);
   display: none;
   justify-content: center;
   align-items: center;
 }
 
-.modal.is-open{
+.modal.is-open {
   display: flex;
 }
 
-.modal-container{
+.modal-container {
   position: relative;
   padding: 1rem;
   min-width: 320px;
@@ -138,10 +139,47 @@ margin-left: 80px;
   max-height: 600px;
   overflow-y: auto;
   background-color: #fff;
+  border-radius: 8px;
 }
 
-.modal-close{
+.modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+.addMoney {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.addMoney-value{
+  margin-top: 25px;
+}
+
+.transferMoney{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-tranfer{
+  height: 30px;
+  width: 80px;
+  margin-left: 200px;
+  margin-top: 10px;
+  background-color: blue;
+  border-radius: 7px;
+  color: white
+}
+
+.button-add{
+  height: 30px;
+  width: 80px;
+  margin-left: 200px;
+  margin-top: 10px;
+  background-color: blue;
+  border-radius: 7px;
+  color: white
 }

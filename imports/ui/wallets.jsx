@@ -1,6 +1,8 @@
 import React from "react";
 import {Modal} from "./component/modal"
 import {useModal} from "./hooks/useModal"
+import { AddMoney } from "./component/addMoney";
+import { TransferMoney } from "./component/transferMoney";
 
 
 export const Wallet = () => {
@@ -23,15 +25,12 @@ export const Wallet = () => {
 <div className="box-buttons">
 <button type="button" className="button-wallet" onClick={openModal1} >Add money</button>
 <Modal isOpen={isOpenModal1} closeModal={closeModal1} >
-    <h4>modal 1</h4>
-    <p>contenido de modal 1</p>
-    <img src="https://placeimg.com/400/400/animals" alt="animals"></img>
+    <AddMoney/>
 </Modal>
 <button type="button" className="button-wallet" onClick={openModal2}>Transfer money</button>
 <Modal isOpen={isOpenModal2} closeModal={closeModal2}>
-    <h4>modal 2</h4>
-    <p>contenido de modal 2</p>
-    <img src="https://placeimg.com/400/400/nature" alt="nature"></img>
+    
+    <TransferMoney/>
 </Modal>
 
 </div>
