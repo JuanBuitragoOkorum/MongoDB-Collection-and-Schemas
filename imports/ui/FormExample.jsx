@@ -9,6 +9,7 @@ export const Form = () => {
     const [page, setPage] = useState("")
     const [error, setError] = useState("")
     const [succes, setSucces] = useState("")
+    const [walletId, setWalletId] = useState("")
 
     const showError = ({ message }) => {
         setError(message)
@@ -22,15 +23,16 @@ export const Form = () => {
 
     const saveContact = () => {
 
-        Meteor.call('contacts.insert', { name, email, page }, (errorResponse) => {
+        Meteor.call('contacts.insert', { name, email, page, walletId }, (errorResponse) => {
             if (errorResponse) {
                 showError({ message: errorResponse.error })//alert(errorResponse.error)
 
             }
             else {
-                setName("")
-                setEmail("")
-                setPage("")
+                setName("");
+                setEmail("");
+                setPage("");
+                setWalletId("");
                 showSucces({ message: "Contact save" })
 
             }
@@ -51,6 +53,12 @@ export const Form = () => {
                         Name
                     </label>
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div>
+                    <label>
+                        Wallet Id
+                    </label>
+                    <input className="walletId" type="text" value={walletId} onChange={(e) => setWalletId(e.target.value)} />
                 </div>
                 <div>
                     <label>

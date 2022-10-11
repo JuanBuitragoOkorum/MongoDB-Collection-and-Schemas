@@ -9,14 +9,18 @@ Meteor.methods({
         ContactsSave.remove(contactId);
     },
 
-    'contacts.insert'({ name, email, page }) {
+    'contacts.insert'({ name, email, page, walletId }) {
         check(name, String)
         check(email, String)
         check(page, String)
+        check(walletId, String)
         if (!name) {
             throw new Meteor.Error("Name is required")
         }
-        return ContactsSave.insert({ name, email, page, createdAt: new Date() })
+        if (!walletId) {
+            throw new Meteor.Error("walletId is required")
+        }
+        return ContactsSave.insert({ name, email, page, walletId, createdAt: new Date() })
     }
 })
 

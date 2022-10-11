@@ -25,7 +25,7 @@ export const ContactList = () => {
         <>
             <h3>Example List</h3>
 
-            <table>{contact.map(contact => (<tr key={contact.email}><td>{contact.name}</td><td>{contact.email}</td><td>{contact.page}</td><td><button className="remove" onClick={(event) => removeContact(event, contact._id)}> remove</button></td></tr>))}</table>
+            <table>{contact.map(contact => (<tr key={contact.email}><td>{contact.name}</td><td>{contact.email}</td><td>{contact.page}</td><td>{contact.walletId}</td><td><button className="remove" onClick={(event) => removeContact(event, contact._id)}> remove</button></td></tr>))}</table>
 
         </>
     )
