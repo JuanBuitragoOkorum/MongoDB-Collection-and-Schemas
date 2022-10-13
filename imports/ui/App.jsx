@@ -8,10 +8,13 @@ import { Wallet } from './wallets';
 export const App = () => (
   <div>
     <Wallet />
-    <h1 className='title'>Meteor Wallet </h1>
+    <div className='title'>
+      <h1 >Meteor Wallet by</h1>
+      <img className='photoJuan' src="https://avatars.githubusercontent.com/u/114958703?v=4" alt="Girl in a jacket" width="70" height="70" />
+    </div>
     <Form />
     <hr />
     <ContactList />
-   
+
   </div>
 );

@@ -190,3 +190,8 @@ table {
   width: 330px;
   margin-left: 10px;
 }
+
+.photoJuan{
+  border-radius: 50%;
+  margin-left: 20px;
+}
