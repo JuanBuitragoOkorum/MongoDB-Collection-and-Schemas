@@ -97,6 +97,7 @@ export const Wallet = () => {
 
     const captureAdd = () => {
         WalletsCollection.update({ _id: "4MMku9JroS2fByPbG" }, { balance: Number(y) + Number(number2) })
+        setNumber2(0)
     }
 
     return (
