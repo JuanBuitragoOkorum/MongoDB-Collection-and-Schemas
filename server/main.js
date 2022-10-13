@@ -10,7 +10,7 @@ import "../imports/api/WalletsPublications"
 import "../imports/api/WalletsMetods"
 import { WalletsCollection } from '../imports/api/WalletsCollection';
 
-/*const walletSchema = new simpleSchema({
+const walletSchema = new simpleSchema({
     balance: {
         type: Number,
         min: 0,
@@ -24,17 +24,17 @@ import { WalletsCollection } from '../imports/api/WalletsCollection';
     createdAt: {
         type: Date
     }
-})*/
+})
 
 
 Meteor.startup(() => {
 
- /*   const walletData = {
+   const walletData = {
         balance: 80,
         createdAt: new Date(),
     }
     const cleanWallet = walletSchema.clean(walletData)
     walletSchema.validate(cleanWallet)
-    WalletsCollection.insert(cleanWallet)*/
+    WalletsCollection.insert(cleanWallet)
  
 });

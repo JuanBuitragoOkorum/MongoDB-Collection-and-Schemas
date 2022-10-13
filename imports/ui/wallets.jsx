@@ -38,8 +38,8 @@ export const Wallet = () => {
 
 
 
-    if (!wallet) {
-        const walletSchema = new simpleSchema({
+    /*if (!wallet) {}
+       /* const walletSchema = new simpleSchema({
             balance: {
                 type: Number,
                 min: 0,
@@ -63,7 +63,7 @@ export const Wallet = () => {
         const cleanWallet = walletSchema.clean(walletData)
         walletSchema.validate(cleanWallet)
         WalletsCollection.insert(cleanWallet)
-    }
+    }*/
 
     const showError = ({ message }) => {
         setError(message)
