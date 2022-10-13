@@ -1,5 +1,6 @@
 body {
-  padding: 10px;
+  padding: 0px;
+  margin: 0px;
   font-family: sans-serif;
 }
 
@@ -15,19 +16,31 @@ body {
 }
 
 form {
-  width: 100%;
+  width: 90%;
   height: 90px;
+  margin: 52px;
+  padding: 10px;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-color: gray;
+  border-width: 0.5px;
+  border-style: groove;
+  border-radius: 6px;
+  background-color: rgb(155, 210, 242);
 }
 
-input {
+.inputForm {
   height: 25px;
   margin-left: 10px;
   border-radius: 8px;
   margin-right: 10px;
+  border-color: gray;
+  border-style: ridge;
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  padding-left: 20px;
 }
 
 button {
@@ -36,29 +49,33 @@ button {
   margin-right: 10px;
   background-color: blue;
   border-radius: 7px;
-  color: white
+  color: white;
+  margin-top: 10px;
 }
 
-label {
-  color: black
-}
+
 
 h3 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+
 }
 
-.remove {
-  background-color: grey;
-}
+
 
 table {
 
   width: 900px;
   margin: 30px auto;
-  font-family: Arial;
+  padding: 20px;
+  border-color: gray;
+  border-width: 0.5px;
+  border-style: groove;
+  border-radius: 6px;
 }
 
 .messageError {
@@ -76,19 +93,25 @@ table {
 }
 
 .head {
+  width: 600px;
+  padding: 10px;
   display: flex;
   background-color: white;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
   margin-bottom: 30px;
+  margin-left: 400px;
   border-radius: 6px;
-
+  border-color: gray;
+  border-width: 0.5px;
+  border-style: groove;
 }
 
 .head-2 {
-  width: 800px;
+  width: 500px;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -105,13 +128,20 @@ table {
 }
 
 .walletId {
+  height: 25px;
   width: 400px;
+  margin-left: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+  border-color: gray;
+  border-style: ridge;
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  padding-left: 20px;
+
 }
 
-.remove {
-  margin-left: 80px;
 
-}
 
 .modal {
   position: fixed;
@@ -152,19 +182,29 @@ table {
 
   display: flex;
   flex-direction: column;
+  
 
 }
 
-.addMoney-value{
+.addMoney-value {
   margin-top: 25px;
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+  border-color: gray;
+  border-style: ridge;
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  padding-left: 20px;
 }
 
-.transferMoney{
+.transferMoney {
   display: flex;
   flex-direction: column;
 }
 
-.button-tranfer{
+.button-tranfer {
   height: 30px;
   width: 80px;
   margin-left: 200px;
@@ -174,7 +214,7 @@ table {
   color: white
 }
 
-.button-add{
+.button-add {
   height: 30px;
   width: 80px;
   margin-left: 200px;
@@ -184,14 +224,87 @@ table {
   color: white
 }
 
-.selectContact{
+.selectContact {
   border-radius: 7px;
   height: 30px;
   width: 330px;
   margin-left: 10px;
+  border-color: gray;
+  border-style: ridge;
+  font-family: 'Comic Sans MS', Courier, monospace;
 }
 
-.photoJuan{
+.photoJuan {
   border-radius: 50%;
-  margin-left: 20px;
+  margin: 10px;
 }
+
+.fontWalletH1 {
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  color: grey;
+}
+
+.photoLogo {
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.titlePpal {
+  font-family: 'Comic Sans MS', Courier, monospace;
+}
+
+.madeBy {
+  margin-left: 700px;
+  font-family: 'Comic Sans MS', Courier, monospace;
+}
+
+.fontWalletH1-2 {
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  color: grey;
+  margin-bottom: 0px;
+}
+
+.fontWalletH2 {
+  font-size: medium;
+  font-family: 'Comic Sans', Courier, monospace;
+  margin-top: 0px;
+
+}
+
+.labelForm {
+
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: medium;
+  margin: 50px;
+}
+
+.labelForm-2 {
+
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size:small;
+  margin: 10px;
+}
+
+td{
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size:larger;
+}
+
+.remove {
+  height: 35px;
+  width: 100px;
+  padding: 0px;
+  background-color: rgb(221, 27, 27);
+  margin-left: 80px;
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size: 18px;
+}
+
+h2{
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size:larger;
+  margin-bottom: 0px;
+}
+

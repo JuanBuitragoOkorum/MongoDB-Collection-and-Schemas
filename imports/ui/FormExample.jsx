@@ -13,12 +13,12 @@ export const Form = () => {
 
     const showError = ({ message }) => {
         setError(message)
-        setTimeout(() => setError(""), 1000)
+        setTimeout(() => setError(""), 2000)
     }
 
     const showSucces = ({ message }) => {
         setSucces(message)
-        setTimeout(() => setSucces(""), 1000)
+        setTimeout(() => setSucces(""), 2000)
     }
 
     const saveContact = () => {
@@ -49,28 +49,28 @@ export const Form = () => {
             <form>
 
                 <div>
-                    <label>
+                    <label className="labelForm">
                         Name
                     </label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input className="inputForm" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
                 <div>
-                    <label>
+                    <label className="labelForm">
                         Wallet Id
                     </label>
                     <input className="walletId" type="text" value={walletId} onChange={(e) => setWalletId(e.target.value)} />
                 </div>
                 <div>
-                    <label>
+                    <label className="labelForm">
                         Email
                     </label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="inputForm" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div>
-                    <label>
+                    <label className="labelForm">
                         Web page
                     </label>
-                    <input type="text" value={page} onChange={(e) => setPage(e.target.value)} />
+                    <input className="inputForm" type="text" value={page} onChange={(e) => setPage(e.target.value)} />
                 </div>
                 <button type="button" onClick={saveContact}>save </button>
 

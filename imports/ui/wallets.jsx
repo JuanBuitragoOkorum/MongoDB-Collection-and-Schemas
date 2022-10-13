@@ -104,8 +104,9 @@ export const Wallet = () => {
         <div className="head">
             <div className="head-2">
                 <div className="head-1">
-                    <h1> Main account </h1>
-                    <h2> wallet Id: {wallet && wallet._id}</h2>
+                    <h1 className="fontWalletH1"> Main account </h1>
+                    <h2 className="fontWalletH1-2"> wallet Id: </h2>
+                    <h2 className="fontWalletH2">{wallet && wallet._id}</h2>
                 </div>
                 <h2 className="currenci">{wallet && wallet.balance} USD </h2>
             </div>
@@ -126,7 +127,7 @@ export const Wallet = () => {
                     <div className="transferMoney">
 
                         <h2>Transfer money to other wallet</h2>
-                        <label>
+                        <label className="labelForm-2">
                             {error && <h4 className="messageError">{error}</h4>}
                             Destination contact
                         </label>
@@ -134,10 +135,10 @@ export const Wallet = () => {
 
                             {contacts.length > 0 ? contacts.map(contact => (<option key={contact._id}>{contact.name}</option>)) : (<option>user no found ...</option>)}
                         </select>
-                        <label>
+                        <label className="labelForm-2">
                             Amount
                         </label>
-                        <input className="transferMoney-value" type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
+                        <input className="inputForm" type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
                         <button className="button-tranfer" onClick={addTransation}>Transfer</button>
                     </div>
 
