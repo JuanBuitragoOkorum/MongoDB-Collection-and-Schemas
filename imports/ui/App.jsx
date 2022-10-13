@@ -7,10 +7,11 @@ import { Wallet } from './wallets';
 
 export const App = () => (
   <div>
-    <Wallet/>
+    <Wallet />
     <h1 className='title'>Meteor Wallet </h1>
     <Form />
     <hr />
     <ContactList />
+   
   </div>
 );

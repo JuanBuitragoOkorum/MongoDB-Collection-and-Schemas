@@ -8,6 +8,8 @@ const captureAdd = () =>{
     console.log(number)
 }
 
+console.log("add number", number)
+
     return (
         <div className="addMoney">
             <h2>Add mone to your wallet</h2>
