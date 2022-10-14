@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Modal } from "./component/modal"
 import { useModal } from "./hooks/useModal"
 //import { AddMoney } from "./component/addMoney";
@@ -21,7 +21,7 @@ export const Wallet = () => {
         console.log("result", x.balance)
         y = x.balance
     }
-
+    const [state, setState] = useState(false)
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [isOpenModal2, openModal2, closeModal2] = useModal(false);
     const [number2, setNumber2] = useState(0)
@@ -29,6 +29,7 @@ export const Wallet = () => {
     const [data, setData] = useState("")
     const [isTransfering, setIsTransfering] = useState(true)
     const [error, setError] = useState("")
+    const [succes, setSucces] = useState("")
 
 
 
@@ -36,68 +37,64 @@ export const Wallet = () => {
 
     const contacts = useFind(() => { return ContactsSave.find({}, { sort: { createdAt: -1 } }) })
 
-
-
-    /*if (!wallet) {}
-       /* const walletSchema = new simpleSchema({
-            balance: {
-                type: Number,
-                min: 0,
-                defaultValue: 0
-            },
-            currency: {
-                type: String,
-                allowedValues: ['USD'],
-                defaultValue: 'USD'
-            },
-            createdAt: {
-                type: Date
-            }
-        })
-
-        const walletData = {
-            balance: 100,
-            createdAt: new Date(),
-        }
-
-        const cleanWallet = walletSchema.clean(walletData)
-        walletSchema.validate(cleanWallet)
-        WalletsCollection.insert(cleanWallet)
-    }*/
-
     const showError = ({ message }) => {
         setError(message)
         setTimeout(() => setError(""), 2000)
     }
 
+    const showSucces = ({ message }) => {
+        setSucces(message)
+        setTimeout(() => setSucces(""), 2500)
+    }
+
+
     const addTransation = () => {
 
         const destinationWallet = contacts.find((elem) => elem.name == data)
-        //console.log(isTransfering, wallet._id, destinationWallet, Number(number))
-        if (Number(y) - Number(number) < 0) {
-            showError({ message: "insufficient funds !!!" })
 
-        }
-        else if (contacts.length === 0) { showError({ message: "Don't have user" }) }
+        if (contacts.length === 0) { showError({ message: "Don't have user" }) }
         else {
-            WalletsCollection.update({ _id: "4MMku9JroS2fByPbG" }, { balance: Number(y) - Number(number) })
+            Meteor.call('wallet.update', {
+                walletId: "4MMku9JroS2fByPbG",
+                balance: Number(-number),
+                compare: Number(y)
+            }, (errorResponse) => {
+                if (errorResponse) {
+                    showError({ message: errorResponse.error })
+                }
+            }
+
+            )
+
 
             Meteor.call('transactions.insert', {
                 isTransfering,
                 sourceWalletId: wallet._id,
-                destinationWalletId: wallet._id,
+                destinationWalletId: destinationWallet,
                 amount: Number(number)
-
             }),
                 setData(""),
                 setNumber(0)
+                showSucces({ message: "Transaction done!!!!" })
         }
+        closeModal2()
+        
+
 
     }
 
     const captureAdd = () => {
-        WalletsCollection.update({ _id: "4MMku9JroS2fByPbG" }, { balance: Number(y) + Number(number2) })
+
+        Meteor.call('wallet.update', {
+            walletId: "4MMku9JroS2fByPbG",
+            balance: Number(number2),
+            compare: Number(y)
+        })
+
+
         setNumber2(0)
+        showSucces({ message: "Add done!!!!" })
+        closeModal1()
     }
 
     return (
@@ -140,11 +137,13 @@ export const Wallet = () => {
                         </label>
                         <input className="inputForm" type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
                         <button className="button-tranfer" onClick={addTransation}>Transfer</button>
+
                     </div>
 
                 </Modal>
 
             </div>
+            {succes && <h4 className="messageSucces">{succes}</h4>}
         </div>
     )
 }

@@ -56,12 +56,6 @@ export const Form = () => {
                 </div>
                 <div>
                     <label className="labelForm">
-                        Wallet Id
-                    </label>
-                    <input className="walletId" type="text" value={walletId} onChange={(e) => setWalletId(e.target.value)} />
-                </div>
-                <div>
-                    <label className="labelForm">
                         Email
                     </label>
                     <input className="inputForm" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -71,6 +65,12 @@ export const Form = () => {
                         Web page
                     </label>
                     <input className="inputForm" type="text" value={page} onChange={(e) => setPage(e.target.value)} />
+                </div>
+                <div>
+                    <label className="labelForm">
+                        Wallet Id
+                    </label>
+                    <input className="inputForm" type="text" value={walletId} onChange={(e) => setWalletId(e.target.value)} />
                 </div>
                 <button type="button" onClick={saveContact}>save </button>
 

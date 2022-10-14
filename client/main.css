@@ -8,7 +8,7 @@ body {
   margin-top: 0;
   width: 100%;
   height: 100px;
-  background-color: blue;
+  background-color: rgb(60, 60, 248);
   color: white;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ button {
   height: 30px;
   width: 80px;
   margin-right: 10px;
-  background-color: blue;
+  background-color: rgb(60, 60, 248);
   border-radius: 7px;
   color: white;
   margin-top: 10px;
@@ -68,7 +68,7 @@ h3 {
 
 
 table {
-
+  
   width: 900px;
   margin: 30px auto;
   padding: 20px;
@@ -76,6 +76,19 @@ table {
   border-width: 0.5px;
   border-style: groove;
   border-radius: 6px;
+}
+
+  
+th {
+  border-bottom: 1px solid black;
+  
+}
+  
+td {
+  font-family: 'Comic Sans MS', Courier, monospace;
+  font-size:larger;
+  text-align: center;
+  color: gray;
 }
 
 .messageError {
@@ -122,7 +135,7 @@ table {
   height: 30px;
   width: 130px;
   margin-left: 20px;
-  background-color: blue;
+  background-color: rgb(60, 60, 248);
   border-radius: 7px;
   color: white
 }
@@ -209,7 +222,7 @@ table {
   width: 80px;
   margin-left: 200px;
   margin-top: 10px;
-  background-color: blue;
+  background-color: rgb(60, 60, 248);
   border-radius: 7px;
   color: white
 }
@@ -219,7 +232,7 @@ table {
   width: 80px;
   margin-left: 200px;
   margin-top: 10px;
-  background-color: blue;
+  background-color: rgb(60, 60, 248);
   border-radius: 7px;
   color: white
 }
@@ -287,16 +300,12 @@ table {
   margin: 10px;
 }
 
-td{
-  font-family: 'Comic Sans MS', Courier, monospace;
-  font-size:larger;
-}
 
 .remove {
   height: 35px;
   width: 100px;
   padding: 0px;
-  background-color: rgb(221, 27, 27);
+  background-color: rgb(247, 62, 62);
   margin-left: 80px;
   font-family: 'Comic Sans MS', Courier, monospace;
   font-size: 18px;

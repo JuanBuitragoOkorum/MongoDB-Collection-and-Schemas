@@ -3,13 +3,16 @@ import { Meteor } from "meteor/meteor"
 import { check } from "meteor/check"
 
 Meteor.methods({
+    'wallet.update'({ walletId, balance, compare }) {
+        check(walletId, String)
+        check(balance, Number)
+        check(compare, Number)
+        
+        if(compare - (-balance) < 0){
+            throw new Meteor.Error("Insufficient funds!!")
+        }
 
-    'wallet.remove'({ contactId }) {
-        check(contactId, String)
-        WalletsCollection.remove(contactId);
-    },
-
-    'wallet.update'({walletId, walletChange}){
-        WalletsCollection.update(walletId, walletChange)
+        WalletsCollection.update({_id:walletId}, {$inc:{balance:balance}})
     }
 })
+
